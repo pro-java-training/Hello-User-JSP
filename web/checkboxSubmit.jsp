@@ -8,22 +8,22 @@
     <title>param array</title>
 </head>
 <body>
-    <h2>Your selections</h2>
+<h2>Your selections</h2>
+<%
+    if (fruits == null) {
+%>You didn't select any fruit.
+<%
+} else {
+%>
+<ul>
     <%
-        if (fruits == null) {
-    %>You didn't select any fruit.
-    <%
-        } else {
+        for (String fruit : fruits){
+            out.println("<li>" + fruit + "</li>");
+        }
     %>
-        <ul>
-            <%
-                for (String fruit : fruits){
-                    out.println("<li>" + fruit + "</li>");
-                }
-            %>
-        </ul>
-    <%
+</ul>
+<%
     }
-    %>
+%>
 </body>
 </html>
