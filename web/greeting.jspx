@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns="http://www.w3.org/1999/xhtml" version="2.0"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:declaration>
+        private static final String DEFAULT_USER = "Guest";
+    </jsp:declaration>
+    <jsp:scriptlet>
+        String user = request.getParameter("user");
+        if (user == null) {
+            user = DEFAULT_USER;
+        }
+    </jsp:scriptlet>
+<!--    <jsp:expression>"This code is commented"</jsp:expression>-->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Hello User Application</title>
+    </head>
+    <body>
+    Hello, <jsp:expression>user</jsp:expression>!<br/><br/>
+    <form action="greeting.jspx" method="post">
+        Enter your name: <br/>
+        <input type="text" name="user" /><br/>
+        <input type="submit" value="Submit" />
+    </form>
+    </body>
+    </html>
+
+</jsp:root>
