@@ -20,7 +20,7 @@
     </head>
     <body>
     Hello, <jsp:expression>user</jsp:expression>!<br/><br/>
-    <form action="greeting.jspx" method="post">
+    <form action="greeting2.jspx" method="post">
         Enter your name: <br/>
         <input type="text" name="user" /><br/>
         <input type="submit" value="Submit" />
